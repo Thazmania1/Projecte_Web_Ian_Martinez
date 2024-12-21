@@ -1,0 +1,317 @@
+/*
+    Archivo de estilos que utilizan la mayoría de las páginas.
+
+    Todo estilo que no tenga una separación de línea significa que está relacionado
+    con el estilo anterior.
+
+    No relacionados:
+
+    main {
+        ...
+    }
+
+    aside {
+        ...
+    }
+
+    Relacionados:
+
+    main {
+        ...
+    }
+    header {
+        ...
+    }
+
+    También pueden estar relacionados con un comentario de por medio si
+    no hay ninguna línea vacía.
+    
+    main {
+        ...
+    }
+    [Comentario]
+    header {
+        ...
+    }
+*/
+
+/* Aplica una animación suave a los enlaces internos al hacer scroll. */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Define un fondo degradado rojizo para el cuerpo de la página. */
+body {
+    background: linear-gradient(to top, rgb(153, 37, 37), rgb(255, 59, 59));
+    padding-top: 25px; padding-bottom: 25px;
+    background-attachment: fixed;
+}
+/* Contenedor que ocupa toda la pantalla para las partículas animadas. */
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Ventana modal para mostrar el consentimiento de privacidad. */
+#privacyModal {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    border: none;
+    border-radius: 5%;
+    box-shadow: 0 0 40px rgb(255, 255, 255);
+    text-align: center;
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: opacity 1s ease-in-out;
+}
+#privacyModal p a {
+    color: blue;
+    text-decoration: underline;
+}
+#privacyModal button {
+    display: inline;
+}
+#privacyModal button:hover {
+    box-shadow: 0 0 20px rgba(255, 125, 125, 0.8);
+    transform: scale(1.05);
+}
+#privacyModal button:active {
+    transform: scale(0.95);
+}
+
+/* Contenedor principal que destaca visualmente del fondo y contiene animaciones. */
+main {
+    margin-left: 15%; margin-right: 15%;
+    padding: 20px;
+    text-align: justify;
+    box-shadow: 0 0 40px rgb(255, 255, 255);
+    transition: opacity 1s ease-in-out, box-shadow 0.2s ease-in-out;
+    background: linear-gradient(to bottom, white, rgb(221, 221, 221));
+    border-radius: 5%;
+    opacity: 1;
+}
+main:hover {
+    box-shadow: 0 0 25px rgb(255, 255, 255);
+}
+/* Estilo para el título principal de la página. */
+header {
+    box-shadow: 0 0 10px rgb(255, 125, 125);
+    transition: box-shadow 0.2s ease-in-out;
+    background: radial-gradient(circle, rgb(255, 157, 157), rgb(255, 125, 125));
+    border-radius: 25%;text-align: center;padding: 40px;
+    margin-bottom: 30px;
+}
+header:hover {
+    box-shadow: 0 0 20px rgb(255, 125, 125);
+}
+header h1 {
+    font-size: 60px;
+    text-shadow: 0px 1px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 0px;
+}
+header h2 {
+    font-size: 30px;
+    text-shadow: 0px 1px 10px rgba(0, 0, 0, 0.5);
+    margin-top: 0px;
+}
+/* Botones del índice de capítulos. */
+button {
+    display: block;
+    font-size: 18px;
+    padding: 15px;
+    margin-top: 20px; margin-bottom: 29px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: radial-gradient(circle, rgb(255, 157, 157), rgb(255, 63, 63));
+    color: white;
+    font-weight: bold;
+    text-shadow: 0px 1px 10px rgba(255, 63, 63, 1);
+    box-shadow: 0 0 10px rgba(255, 125, 125, 0.8);
+    transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+nav button:hover {
+    box-shadow: 0 0 20px rgba(255, 125, 125, 0.8);
+    transform: scale(1.05);
+}
+nav button:active {
+    transform: scale(0.95);
+}
+#chapter_nav ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+/* Contenedor de los enlaces a otras páginas */
+aside {
+    width: 95px;
+    height: 95%;
+    position: fixed;
+    left: 2%;
+    bottom: 0;
+    justify-content: center;
+    z-index: 5;
+    transition: opacity 1s ease-in-out;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+article {
+    margin-top: 20%;
+    padding-top: 50%;
+    height: fit-content;
+    width: 75px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
+    transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+/* Estilos específicos para cada bola. */
+#privacy {
+    background: radial-gradient(circle, white, rgb(241, 255, 119));
+    padding-top: 20px;
+    padding-bottom: 20px;
+    box-shadow: 0 0 25px rgb(241, 255, 119);
+}
+#privacy:hover {
+    box-shadow: 0 0 40px rgb(241, 255, 119);
+    transform: scale(1.05);
+}
+#index {
+    background: radial-gradient(circle, white, rgb(255, 86, 224));
+    padding-top: 35px;
+    padding-bottom: 35px;
+    box-shadow: 0 0 25px rgb(255, 86, 224);
+}
+#index:hover {
+    box-shadow: 0 0 40px rgb(255, 86, 224);
+    transform: scale(1.05);
+}
+#services {
+    background: radial-gradient(circle, white, rgb(111, 251, 4));
+    padding-top: 35px;
+    padding-bottom: 35px;
+    box-shadow: 0 0 25px rgb(111, 251, 4);
+}
+#services:hover {
+    box-shadow: 0 0 40px rgb(111, 251, 4);
+    transform: scale(1.05);
+}
+#about_us {
+    background: radial-gradient(circle, white, rgb(251, 4, 4));
+    padding-top: 27px;
+    padding-bottom: 27px;
+    box-shadow: 0 0 25px rgb(251, 4, 4);
+}
+#about_us:hover {
+    box-shadow: 0 0 40px rgb(251, 4, 4);
+    transform: scale(1.05);
+}
+#contacts {
+    background: radial-gradient(circle, white, rgb(37, 4, 182));
+    padding-top: 35px;
+    padding-bottom: 35px;
+    box-shadow: 0 0 25px rgb(37, 4, 182);
+}
+#contacts:hover {
+    box-shadow: 0 0 40px rgb(37, 4, 182);
+    transform: scale(1.05);
+}
+#delete {
+    background: radial-gradient(circle, rgb(166, 166, 166), rgb(255, 255, 255));
+    padding-top: 27px;
+    padding-bottom: 27px;
+    box-shadow: 0 0 25px rgb(37, 4, 182);
+}
+#delete:hover {
+    box-shadow: 0 0 40px rgb(37, 4, 182);
+    transform: scale(1.05);
+}
+.separator {
+    border-bottom: 1px solid white;
+    margin-top: 20px;
+}
+
+/* Formulario de contactos. */
+section form label {
+    font-size: 18px;
+    margin-bottom: 8px;
+    display: block;
+}
+section form input[type="email"],
+section form textarea {
+    max-width: fit-content;
+    width: 100%;
+    padding: 12px;
+    border: 2px solid rgb(255, 63, 63);
+    border-radius: 6px;
+    font-size: 16px;
+    background: rgb(255, 241, 241);
+    box-shadow: 0 0 10px rgba(255, 125, 125, 0.6);
+    transition: box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+section form input[type="email"]:focus,
+section form textarea:focus {
+    box-shadow: 0 0 15px rgba(255, 86, 224, 0.8);
+    outline: none;
+    border-color: rgb(255, 86, 224);
+}
+section form input[type="email"]::placeholder,
+section form textarea::placeholder {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(150, 37, 37);
+    font-size: 14px;
+    font-style: italic;
+}
+section form button[type="submit"] {
+    background: radial-gradient(circle, rgb(255, 157, 157), rgb(255, 63, 63));
+    color: white;
+    font-size: 18px;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255, 125, 125, 0.8);
+    transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+section form button[type="submit"]:hover {
+    box-shadow: 0 0 25px rgba(255, 125, 125, 0.9);
+    transform: scale(1.05);
+}
+section form button[type="submit"]:active {
+    transform: scale(0.95);
+}
+
+br {
+    display: block;
+    height: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+a:active {
+    color: black;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}

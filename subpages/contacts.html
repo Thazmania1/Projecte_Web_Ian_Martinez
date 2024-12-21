@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- Metadatos de la página. -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/main_style.css" type="text/css">
+    <link rel="icon" href="../favicon.jpg" type="image/x-icon">
+
+    <title>Contactos</title>
+    <meta name="description" content="Aprende sobre la evolución de la comprensión comedica de los humanos.">
+    <meta name="keywords" content="Humor, Contactos">
+    <meta name="robots" content="index, follow">
+
+    <!-- Metadatos para cuando el enlace de esta página sea compartido. -->
+    <meta property="og:title" content="Contactos">
+    <meta property="og:description" content="Aprende sobre la evolución de la comprensión comedica de los humanos.">
+    <meta property="og:image" content="../favicon.jpg">
+    
+    <!-- Este script permite añadir partículas a la pagina web. -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.34.0/tsparticles.min.js"></script>
+</head>
+
+<!-- El <body> és utilizado como un fondo. -->
+<body>
+    <!-- Contenedor para las partículas. -->
+    <div id="particles-js"></div>
+
+    <!-- Este <main> tiene el proposito de destacar el contenido de <body>. -->
+    <main>
+        <!-- Titulo principal de la página. -->
+        <header>
+            <h1>
+                Contactos
+            </h1>
+            <h2>
+
+            </h2>
+        </header>
+
+        <!-- Formulario de la página. -->
+        <section>
+            <form action="../contact_form.php" method="post">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" required placeholder="Escribe tu correo electrónico."/>
+                <br><br>
+
+                <label for="details">Asunto</label>
+                <textarea id="details" name="details" rows="5" cols="40" required placeholder="Explica el motivo de tu solicitud de contacto."></textarea>
+                <br><br>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Contenedor donde se almacenan los enlaces a las páginas. -->
+    <aside>
+        <nav id="page_nav">
+            <ul>
+                <li><a href="../privacy.html"><article id="privacy">Política de privacidad y LOPDGDD</article></a></li>
+                <li class="separator"></li>
+                <li><a href="../index.html"><article id="index">Inicio</article></a></li>
+                <li><a href="./subpages/services.html"><article id="services">Servicios</article></a></li>
+                <li><a href="./subpages/about_us.html"><article id="about_us">Sobre nosotros</article></a></li>
+                <li><a href="./subpages/contacts.html"><article id="contacts">Contactos</article></a></li>
+                <li class="separator"></li>
+                <li><a onclick="revokePrivacyConsent();"><article id="delete">Revocar privacidad</article></a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Script hecho por IA, determina el comportamiento y las propiedades
+    de las partículas. -->
+    <script>
+        window.addEventListener('load', () => {
+            tsParticles.load("particles-js", {
+                particles: {
+                    number: { value: 200, density: { enable: true, value_area: 800 } },
+                    shape: { type: "circle" },
+                    opacity: { value: 0.5, random: true, anim: { enable: true, speed: 1, opacity_min: 0 } },
+                    size: { value: 3, random: true },
+                    move: { enable: true, speed: 1, direction: "bottom", random: true, outModes: { default: "out" } },
+                },
+                color: { value: "rgb(0, 0, 0)" }
+            });
+        });
+    </script>
+
+    <!-- Script hecho por IA, borra los datos recopilados del usuario y revoca su
+    consentimiento de privacidad. -->
+    <script>
+        function revokePrivacyConsent() {
+            localStorage.removeItem('privacyAccepted');
+            localStorage.removeItem('firstClicked');
+            localStorage.removeItem('visitCount');
+    
+            if (window.location.pathname !== '/index.html' && window.location.pathname !== '/') {
+                window.location.href = '../index.html';
+            } else {
+                const modal = document.getElementById('privacyModal');
+                const aside = document.querySelector('aside');
+                const mainContent = document.querySelector('main');
+                
+                modal.style.display = 'block';
+                aside.classList.add('hidden');
+                mainContent.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>

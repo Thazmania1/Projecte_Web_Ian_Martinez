@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- Metadatos de la página. -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/main_style.css" type="text/css">
+    <link rel="icon" href="../favicon.jpg" type="image/x-icon">
+
+    <title>Sobre nosotros</title>
+    <meta name="description" content="Aprende sobre la evolución de la comprensión comedica de los humanos.">
+    <meta name="keywords" content="Humor, Nosotros">
+    <meta name="robots" content="index, follow">
+
+    <!-- Metadatos para cuando el enlace de esta página sea compartido. -->
+    <meta property="og:title" content="Sobre nosotros">
+    <meta property="og:description" content="Aprende sobre la evolución de la comprensión comedica de los humanos.">
+    <meta property="og:image" content="../favicon.jpg">
+    
+    <!-- Este script permite añadir partículas a la página web. -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.34.0/tsparticles.min.js"></script>
+</head>
+
+<!-- El <body> és utilizado como un fondo. -->
+<body>
+    <!-- Contenedor para las partículas. -->
+    <div id="particles-js"></div>
+
+    <!-- Este <main> tiene el proposito de destacar el contenido de <body>. -->
+    <main>
+        <!-- Titulo principal de la página. -->
+        <header>
+            <h1>
+                Sobre nosotros
+            </h1>
+            <h2>
+
+            </h2>
+        </header>
+
+        <!-- Contenido de la página. -->
+        <section>
+            <h2>Sobre nosotros</h2>
+            <p>Somos un equipo apasionado por la historia, la cultura y el impacto del humor en la sociedad. Nuestro objetivo es proporcionar contenido accesible, educativo y entretenido que explore cómo el humor ha moldeado e influido en las distintas épocas y culturas.</p>
+            <p>Creemos que el humor es una ventana única hacia el entendimiento de las dinámicas sociales, los cambios culturales y las formas de expresión humana. Por ello, hemos diseñado esta página como un espacio interactivo, visual y educativo que combina rigor histórico con una experiencia de usuario atractiva.</p>
+            <p>Ya sea que seas estudiante, investigador o simplemente un curioso, estamos aquí para acompañarte en un recorrido por la historia del humor, desde los textos clásicos hasta los memes de la era digital. Nuestro compromiso es ofrecer un espacio transparente, informativo y abierto a la colaboración.</p>
+            <p>Si deseas saber más, colaborar o tienes alguna sugerencia, no dudes en ponerte en contacto con nosotros a través de la sección "Contactos".</p>
+        </section>
+    </main>
+
+    <!-- Contenedor donde se almacenan los enlaces a las páginas. -->
+    <aside>
+        <nav id="page_nav">
+            <ul>
+                <li><a href="../privacy.html"><article id="privacy">Política de privacidad y LOPDGDD</article></a></li>
+                <li class="separator"></li>
+                <li><a href="../index.html"><article id="index">Inicio</article></a></li>
+                <li><a href="./subpages/services.html"><article id="services">Servicios</article></a></li>
+                <li><a href="./subpages/about_us.html"><article id="about_us">Sobre nosotros</article></a></li>
+                <li><a href="./subpages/contacts.html"><article id="contacts">Contactos</article></a></li>
+                <li class="separator"></li>
+                <li><a onclick="revokePrivacyConsent();"><article id="delete">Revocar privacidad</article></a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Script hecho por IA, determina el comportamiento y las propiedades
+    de las partículas. -->
+    <script>
+        window.addEventListener('load', () => {
+            tsParticles.load("particles-js", {
+                particles: {
+                    number: { value: 200, density: { enable: true, value_area: 800 } },
+                    shape: { type: "circle" },
+                    opacity: { value: 0.5, random: true, anim: { enable: true, speed: 1, opacity_min: 0 } },
+                    size: { value: 3, random: true },
+                    move: { enable: true, speed: 1, direction: "bottom", random: true, outModes: { default: "out" } },
+                },
+                color: { value: "rgb(0, 0, 0)" }
+            });
+        });
+    </script>
+
+    <!-- Script hecho por IA, borra los datos recopilados del usuario y revoca su
+    consentimiento de privacidad. -->
+    <script>
+        function revokePrivacyConsent() {
+            localStorage.removeItem('privacyAccepted');
+            localStorage.removeItem('firstClicked');
+            localStorage.removeItem('visitCount');
+    
+            if (window.location.pathname !== '/index.html' && window.location.pathname !== '/') {
+                window.location.href = '../index.html';
+            } else {
+                const modal = document.getElementById('privacyModal');
+                const aside = document.querySelector('aside');
+                const mainContent = document.querySelector('main');
+                
+                modal.style.display = 'block';
+                aside.classList.add('hidden');
+                mainContent.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>

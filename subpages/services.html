@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- Metadatos de la página. -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/main_style.css" type="text/css">
+    <link rel="icon" href="../favicon.jpg" type="image/x-icon">
+
+    <title>Servicios</title>
+    <meta name="description" content="Aprende sobre la evolución de la comprensión comedica de los humanos.">
+    <meta name="keywords" content="Humor, Servicios">
+    <meta name="robots" content="index, follow">
+
+    <!-- Metadatos para cuando el enlace de esta página sea compartido. -->
+    <meta property="og:title" content="Servicios">
+    <meta property="og:description" content="Aprende sobre la evolución de la comprensión comedica de los humanos.">
+    <meta property="og:image" content="../favicon.jpg">
+    
+    <!-- Este script permite añadir partículas a la página web. -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.34.0/tsparticles.min.js"></script>
+</head>
+
+<!-- El <body> és utilizado como un fondo. -->
+<body>
+    <!-- Contenedor para las partículas. -->
+    <div id="particles-js"></div>
+
+    <!-- Este <main> tiene el proposito de destacar el contenido de <body>. -->
+    <main>
+        <!-- Titulo principal de la página. -->
+        <header>
+            <h1>
+                Servicios
+            </h1>
+            <h2>
+
+            </h2>
+        </header>
+
+        <!-- Contenido de la página. -->
+        <section>
+            <h2>Servicios que ofrecemos</h2>
+            <ul>
+                <li>
+                    <h3>Artículos de análisis histórico</h3>
+                    <p>Descubre cómo el humor ha evolucionado desde la antigüedad hasta la era digital. Cada capítulo ofrece un análisis detallado de las principales corrientes, autores y manifestaciones humorísticas a lo largo de la historia.</p>
+                </li>
+                <li>
+                    <h3>Recursos educativos</h3>
+                    <p>Disponemos de secciones diseñadas para estudiantes, investigadores y apasionados de la historia cultural. Ofrecemos contenido estructurado por capítulos que facilita el aprendizaje y el entendimiento del humor como fenómeno social y cultural.</p>
+                </li>
+                <li>
+                    <h3>Exploración visual e interactiva</h3>
+                    <p>Nuestra interfaz incluye elementos interactivos, como animaciones y partículas visuales, que enriquecen la experiencia de navegación. Estas herramientas no solo decoran la página, sino que hacen que el aprendizaje sea más atractivo y memorable.</p>
+                </li>
+                <li>
+                    <h3>Sección de reflexión y crítica</h3>
+                    <p>Proporcionamos espacio para reflexionar sobre el papel del humor en la sociedad actual, considerando temas como la cultura de la cancelación, los movimientos sociales y el impacto de las redes sociales.</p>
+                </li>
+                <li>
+                    <h3>Navegación simplificada</h3>
+                    <p>Un sistema de navegación eficiente permite a los usuarios moverse fácilmente entre capítulos y secciones. Además, la página incluye enlaces relevantes, como normativas legales y detalles sobre nuestra política de privacidad.</p>
+                </li>
+                <li>
+                    <h3>Actualizaciones constantes</h3>
+                    <p>Mantenemos el contenido actualizado para reflejar nuevos estudios, tendencias humorísticas contemporáneas y descubrimientos históricos relevantes sobre el tema.</p>
+                </li>
+                <li>
+                    <h3>Contacto y transparencia</h3>
+                    <p>En la sección “Sobre nosotros”, los visitantes pueden aprender más sobre el propósito del sitio y ponerse en contacto con nosotros para colaboraciones, consultas o sugerencias.</p>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Contenedor donde se almacenan los enlaces a las páginas. -->
+    <aside>
+        <nav id="page_nav">
+            <ul>
+                <li><a href="../privacy.html"><article id="privacy">Política de privacidad y LOPDGDD</article></a></li>
+                <li class="separator"></li>
+                <li><a href="../index.html"><article id="index">Inicio</article></a></li>
+                <li><a href="./subpages/services.html"><article id="services">Servicios</article></a></li>
+                <li><a href="./subpages/about_us.html"><article id="about_us">Sobre nosotros</article></a></li>
+                <li><a href="./subpages/contacts.html"><article id="contacts">Contactos</article></a></li>
+                <li class="separator"></li>
+                <li><a onclick="revokePrivacyConsent();"><article id="delete">Revocar privacidad</article></a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Script hecho por IA, determina el comportamiento y las propiedades
+    de las partículas. -->
+    <script>
+        window.addEventListener('load', () => {
+            tsParticles.load("particles-js", {
+                particles: {
+                    number: { value: 200, density: { enable: true, value_area: 800 } },
+                    shape: { type: "circle" },
+                    opacity: { value: 0.5, random: true, anim: { enable: true, speed: 1, opacity_min: 0 } },
+                    size: { value: 3, random: true },
+                    move: { enable: true, speed: 1, direction: "bottom", random: true, outModes: { default: "out" } },
+                },
+                color: { value: "rgb(0, 0, 0)" }
+            });
+        });
+    </script>
+
+    <!-- Script hecho por IA, borra los datos recopilados del usuario y revoca su
+    consentimiento de privacidad. -->
+    <script>
+        function revokePrivacyConsent() {
+            localStorage.removeItem('privacyAccepted');
+            localStorage.removeItem('firstClicked');
+            localStorage.removeItem('visitCount');
+    
+            if (window.location.pathname !== '/index.html' && window.location.pathname !== '/') {
+                window.location.href = '../index.html';
+            } else {
+                const modal = document.getElementById('privacyModal');
+                const aside = document.querySelector('aside');
+                const mainContent = document.querySelector('main');
+                
+                modal.style.display = 'block';
+                aside.classList.add('hidden');
+                mainContent.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>

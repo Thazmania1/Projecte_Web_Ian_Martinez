@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- Metadatos de la página. -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/main_style.css" type="text/css">
+    <link rel="icon" href="./favicon.jpg" type="image/x-icon">
+
+    <title>Inicio</title>
+    <meta name="description" content="Aprende sobre la evolución de la comprensión comedica de los humanos.">
+    <meta name="keywords" content="Humor">
+    <meta name="robots" content="index, follow">
+
+    <!-- Metadatos para cuando el enlace de esta página sea compartido. -->
+    <meta property="og:title" content="Humor: Un analisis">
+    <meta property="og:description" content="Aprende sobre la evolución de la comprensión comedica de los humanos.">
+    <meta property="og:image" content="./favicon.jpg">
+    
+    <!-- Este script permite añadir partículas a la página web. -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.34.0/tsparticles.min.js"></script>
+</head>
+
+<!-- El <body> és utilizado como un fondo. -->
+<body id="scroll">
+    <!-- Contenedor de la ventana de Política de privacidad. -->
+    <dialog id="privacyModal">
+        <h2>Política de privacidad</h2>
+        <p>Al utilizar este sitio web, aceptas nuestra Política de privacidad y los Términos de Servicio. Por favor, léelos cuidadosamente antes de continuar.</p>
+        <p><a href="privacy.html">Leer la Política de privacidad</a></p>
+        <button onclick="acceptPrivacyPolicy()">Aceptar</button>
+    </dialog>
+
+    <!-- Contenedor para las partículas. -->
+    <div id="particles-js"></div>
+
+    <!-- Este <main> tiene el proposito de destacar el contenido de <body>. -->
+    <main>
+        <!-- Titulo principal de la página. -->
+        <header>
+            <h1>
+                Humor
+            </h1>
+            <h2>
+                Un analisis
+            </h2>
+        </header>
+
+        <!-- Contenedor donde un script introducirá contenido. -->
+        <section></section>
+
+        <!-- Índice de capítulos. -->
+        <nav id="chapter_nav">
+            <ul>
+                <li><button data-chapter="1">Capítulo 1: Introducción</button></li>
+                <li><button data-chapter="2">Capítulo 2: El humor en la Antigüedad y la Edad Media</button></li>
+                <li><button data-chapter="3">Capítulo 3: El Renacimiento y la Edad Moderna</button></li>
+                <li><button data-chapter="4">Capítulo 4: El humor en el siglo XIX y principios del XX</button></li>
+                <li><button data-chapter="5">Capítulo 5: El humor en el siglo XX: De la televisión a Internet</button></li>
+                <li><button data-chapter="6">Capítulo 6: El humor en la era digital y el siglo XXI</button></li>
+                <li><button data-chapter="7">Capítulo 7: Conclusiones y reflexiones finales</button></li>
+            </ul>
+        </nav>
+    </main>
+
+    <!-- Contenedor donde se almacenan los enlaces a las páginas. -->
+    <aside>
+        <nav id="page_nav">
+            <ul>
+                <li><a href="./privacy.html"><article id="privacy">Política de privacidad y LOPDGDD</article></a></li>
+                <li class="separator"></li>
+                <li><a href="./index.html"><article id="index">Inicio</article></a></li>
+                <li><a href="./subpages/services.html"><article id="services">Servicios</article></a></li>
+                <li><a href="./subpages/about_us.html"><article id="about_us">Sobre nosotros</article></a></li>
+                <li><a href="./subpages/contacts.html"><article id="contacts">Contactos</article></a></li>
+                <li class="separator"></li>
+                <li><a onclick="revokePrivacyConsent();"><article id="delete">Revocar privacidad</article></a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Script hecho por IA, determina el comportamiento y las propiedades
+    de las partículas. -->
+    <script>
+        window.addEventListener('load', () => {
+            tsParticles.load("particles-js", {
+                particles: {
+                    number: { value: 200, density: { enable: true, value_area: 800 } },
+                    shape: { type: "circle" },
+                    opacity: { value: 0.5, random: true, anim: { enable: true, speed: 1, opacity_min: 0 } },
+                    size: { value: 3, random: true },
+                    move: { enable: true, speed: 1, direction: "bottom", random: true, outModes: { default: "out" } },
+                },
+                color: { value: "rgb(0, 0, 0)" }
+            });
+        });
+    </script>
+
+    <!-- Script hecho por IA, reemplaza el contenido en <header> y <section> 
+    y envía al usuario al principio de la página cuando se pulsa un botón. -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const mainContent = document.querySelector("main");
+            const buttons = document.querySelectorAll("nav button");
+
+            const chapters = {
+                1: {
+                    title: "Capítulo 1",
+                    subtitle: "Introducción",
+                    text: `
+                        <h3>Contextualización del tema</h3>
+                        <p>El humor como un fenómeno cultural ha existido a lo largo de la historia, pero sus formas y el contexto en el que se manifiesta han variado. A través de este estudio, se pretende entender cómo los cambios sociales y culturales han influido en la percepción y la función del humor.</p>
+                        <h3>Objetivos y justificación</h3>
+                        <p>Se busca examinar cómo los diferentes periodos históricos han modelado el humor y cómo este ha sido usado como herramienta para la crítica social, la cohesión de grupos y el enfrentamiento de tabúes. La justificación de este estudio radica en la importancia del humor para la construcción de la identidad colectiva y la reflexión sobre la sociedad.</p>
+                    `,
+                },
+                2: {
+                    title: "Capítulo 2",
+                    subtitle: "El humor en la Antigüedad y la Edad Media",
+                    text: `
+                        <h3>La Grecia clásica y Roma</h3>
+                        <p>El humor en el teatro griego y romano fue utilizado principalmente para criticar las instituciones políticas y sociales, con la comedia de Aristófanes como ejemplo paradigmático. El humor en estas culturas también tenía un componente filosófico, donde los grandes pensadores como Sócrates y Aristóteles reflexionaron sobre las funciones del humor.</p>
+                        <h3>La Edad Media</h3>
+                        <p>Durante la Edad Media, el humor pasó a un segundo plano, ya que la iglesia y el dogma religioso dominaron la vida cultural. Sin embargo, la figura del bufón y las sátiras de los trovadores y juglares mantuvieron una tradición humorística que, aunque limitada, permitió que el humor se usara como medio para subvertir el orden establecido.</p>
+                    `,
+                },
+                3: {
+                    title: "Capítulo 3",
+                    subtitle: "El Renacimiento y la Edad Moderna",
+                    text: `
+                        <h3>El Renacimiento</h3>
+                        <p>Durante el Renacimiento, el redescubrimiento de los clásicos y el enfoque humanista influyeron en una renovación del humor, donde se incorporaron elementos más refinados y menos centrados en la crítica directa a las autoridades. La sátira literaria de autores como Erasmo de Róterdam y los primeros movimientos de la comedia italiana (Commedia dell'Arte) mostraron una transición hacia un humor más sofisticado y escénico.</p>
+                        <h3>La comedia en la Edad Moderna</h3>
+                        <p>A medida que las naciones europeas experimentaron cambios políticos y sociales, el humor comenzó a tomar un giro más crítico. Las obras de autores como Molière y Shakespeare usaron el humor no solo como entretenimiento, sino también como medio de reflexión social y política.</p>
+                    `,
+                },
+                4: {
+                    title: "Capítulo 4",
+                    subtitle: "El humor en el siglo XIX y principios del XX",
+                    text: `
+                        <h3>El siglo XIX</h3>
+                        <p>La industrialización y el aumento de la educación popular trajeron consigo una nueva clase media que demandó formas de entretenimiento que reflejaran sus propios intereses. En esta época, se consolidan géneros como la comedia de enredos y el humor de los salones literarios. Autores como Mark Twain y Charles Dickens introdujeron un humor más crítico, que ya no se limitaba a la sátira, sino que abordaba las desigualdades sociales.</p>
+                        <h3>La influencia del cine y la radio</h3>
+                        <p>A finales del siglo XIX y principios del XX, el cine y la radio comenzaron a ser los principales medios de difusión del humor. Figuras como Charlie Chaplin y Buster Keaton trajeron un tipo de humor visual y físico, mientras que las radionovelas y los programas cómicos transformaron el panorama del entretenimiento.</p>
+                    `,
+                },
+                5: {
+                    title: "Capítulo 5",
+                    subtitle: "El humor en el siglo XX: De la televisión a Internet",
+                    text: `
+                        <h3>El impacto de la televisión y la cultura pop</h3>
+                        <p>Con la llegada de la televisión en el siglo XX, el humor se democratizó aún más, llegando a audiencias masivas. Los programas de televisión como *I Love Lucy*, *Monty Python’s Flying Circus* y *The Simpsons* representaron diferentes enfoques del humor, desde lo absurdo hasta lo satírico. La televisión permitió una rápida difusión de nuevas formas de humor que reflejaban la realidad social, política y cultural de su tiempo.</p>
+                        <h3>El humor como crítica social</h3>
+                        <p>El humor de los años 60, 70 y 80 en particular, se utilizó para desafiar normas establecidas y cuestionar el statu quo. La sátira política y social alcanzó nuevas alturas con comediantes como George Carlin, Richard Pryor y Lenny Bruce, quienes utilizaron su plataforma para subvertir normas morales y desafiar las autoridades.</p>
+                    `,
+                },
+                6: {
+                    title: "Capítulo 6",
+                    subtitle: "El humor en la era digital y el siglo XXI",
+                    text: `
+                        <h3>Internet y las redes sociales</h3>
+                        <p>En la actualidad, el humor ha tomado una nueva forma en la era digital. Memes, videos virales y el humor interactivo en plataformas como Twitter, YouTube y TikTok son fenómenos que reflejan el cambio hacia un humor más inmediato y globalizado. La rapidez con que se difunden estos contenidos permite que el humor se vuelva más efímero, pero también más accesible a audiencias de todo el mundo.</p>
+                        <h3>El humor en la cultura de la cancelación y el activismo</h3>
+                        <p>El humor contemporáneo también se enfrenta a nuevas dinámicas, como la cultura de la cancelación y la creciente sensibilidad hacia las representaciones de ciertos grupos y temas. El humor en la era de las redes sociales es más inclusivo, pero también más vigilado y autoconsciente, ya que los límites del humor han cambiado en respuesta a los movimientos sociales.</p>
+                    `,
+                },
+                7: {
+                    title: "Capítulo 7",
+                    subtitle: "Conclusiones y reflexiones finales",
+                    text: `
+                        <h3>El papel del humor en la sociedad moderna</h3>
+                        <p>A lo largo de los siglos, el humor ha evolucionado de ser una herramienta principalmente crítica y subversiva a convertirse en un fenómeno global que refleja y configura las identidades individuales y colectivas. Aunque las formas de humor continúan cambiando, su capacidad para señalar lo absurdo, desafiar las normas y aliviar las tensiones sociales sigue siendo su función más importante.</p>
+                        <h3>Reflexión sobre la función social del humor</h3>
+                        <p>Finalmente, el estudio de la evolución del humor ofrece una ventana al análisis de cómo las sociedades se han transformado y adaptado. Desde la crítica social en la Grecia clásica hasta los memes que circulan en redes sociales, el humor sigue siendo una de las formas más poderosas de comunicar ideas complejas, aliviar tensiones y fortalecer la conexión humana.</p>
+                    `,
+                },
+            };
+
+            buttons.forEach(button => {
+                button.addEventListener("click", () => {
+                    const chapter = button.dataset.chapter;
+
+                    mainContent.classList.add("hidden");
+                    document.getElementById('scroll').scrollIntoView();
+
+                    setTimeout(() => {
+                        const header = mainContent.querySelector("header h1");
+                        const subheader = mainContent.querySelector("header h2")
+                        const section = mainContent.querySelector("section");
+
+                        header.innerHTML = chapters[chapter].title;
+                        subheader.innerHTML = chapters[chapter].subtitle
+                        section.innerHTML = chapters[chapter].text;
+
+                        mainContent.classList.remove("hidden");
+                    }, 1500);
+                });
+            });
+        });
+    </script>
+
+    <!-- Script hecho por IA, maneja el consentimiento de la politica de privacidad
+    antes de mostrar el contenido y recopilar datos del usuario. (Visitas a la página web, y
+    cuál es el primer objeto con el que interactúa.)-->
+    <script>
+        window.onload = function() {
+            const privacyAccepted = localStorage.getItem('privacyAccepted');
+            const modal = document.getElementById('privacyModal');
+            const aside = document.querySelector('aside');
+            const mainContent = document.querySelector('main');
+
+            if (privacyAccepted) {
+                let visitCount = localStorage.getItem('visitCount');
+                visitCount = visitCount ? parseInt(visitCount) + 1 : 1;
+                localStorage.setItem('visitCount', visitCount);
+            }
+    
+            if (!privacyAccepted) {
+                modal.style.display = 'block';
+                aside.classList.add('hidden');
+                mainContent.classList.add('hidden');
+            } else {
+                modal.style.display = 'none';
+                aside.classList.remove('hidden');
+                mainContent.classList.remove('hidden');
+            }
+    
+            trackFirstClick();
+        };
+    
+        function acceptPrivacyPolicy() {
+            localStorage.setItem('privacyAccepted', 'true');
+            document.getElementById('privacyModal').style.display = 'none';
+            document.querySelector('aside').classList.remove('hidden');
+            document.querySelector('main').classList.remove('hidden');
+        }
+    
+        function trackFirstClick() {
+            let firstClickTracked = false;
+            const buttons = document.querySelectorAll('button[data-chapter], a[href]');
+    
+            function handleClick(event) {
+                if (firstClickTracked) return;
+    
+                let clickedElement = event.target;
+                let identifier = '';
+    
+                if (clickedElement.tagName === 'BUTTON') {
+                    identifier = clickedElement.getAttribute('data-chapter');
+                } else if (clickedElement.tagName === 'A') {
+                    identifier = clickedElement.getAttribute('href');
+                }
+    
+                if (identifier) {
+                    localStorage.setItem('firstClicked', identifier);
+                }
+    
+                firstClickTracked = true;
+    
+                buttons.forEach(button => button.removeEventListener('click', handleClick));
+            }
+    
+            buttons.forEach(button => {
+                button.addEventListener('click', handleClick);
+            });
+        }
+    </script>
+
+    <!-- Script hecho por IA, borra los datos recopilados del usuario y revoca su
+    consentimiento de privacidad. -->
+    <script>
+        function revokePrivacyConsent() {
+            localStorage.removeItem('privacyAccepted');
+            localStorage.removeItem('firstClicked');
+            localStorage.removeItem('visitCount');
+    
+            if (window.location.pathname !== '/index.html' && window.location.pathname !== '/') {
+                window.location.href = '../index.html';
+            } else {
+                const modal = document.getElementById('privacyModal');
+                const aside = document.querySelector('aside');
+                const mainContent = document.querySelector('main');
+                
+                modal.style.display = 'block';
+                aside.classList.add('hidden');
+                mainContent.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
