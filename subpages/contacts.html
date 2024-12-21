@@ -62,9 +62,9 @@
                 <li><a href="../privacy.html"><article id="privacy">Política de privacidad y LOPDGDD</article></a></li>
                 <li class="separator"></li>
                 <li><a href="../index.html"><article id="index">Inicio</article></a></li>
-                <li><a href="./subpages/services.html"><article id="services">Servicios</article></a></li>
-                <li><a href="./subpages/about_us.html"><article id="about_us">Sobre nosotros</article></a></li>
-                <li><a href="./subpages/contacts.html"><article id="contacts">Contactos</article></a></li>
+                <li><a href="./services.html"><article id="services">Servicios</article></a></li>
+                <li><a href="./about_us.html"><article id="about_us">Sobre nosotros</article></a></li>
+                <li><a href="./contacts.html"><article id="contacts">Contactos</article></a></li>
                 <li class="separator"></li>
                 <li><a onclick="revokePrivacyConsent();"><article id="delete">Revocar privacidad</article></a></li>
             </ul>
@@ -96,17 +96,7 @@
             localStorage.removeItem('firstClicked');
             localStorage.removeItem('visitCount');
     
-            if (window.location.pathname !== '/index.html' && window.location.pathname !== '/') {
-                window.location.href = '../index.html';
-            } else {
-                const modal = document.getElementById('privacyModal');
-                const aside = document.querySelector('aside');
-                const mainContent = document.querySelector('main');
-                
-                modal.style.display = 'block';
-                aside.classList.add('hidden');
-                mainContent.classList.add('hidden');
-            }
+            window.location.href = '../index.html';
         }
     </script>
 </body>
